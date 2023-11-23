@@ -1,6 +1,5 @@
 import { sveltekit } from '@sveltejs/kit/vite';
-import { webSocketServer } from './socket/webSocketPluginVite';
-
+import { webSocketServer, webSocketServerVite } from './socket/webSocketPluginVite';
 /** @type {import('vite').UserConfig} */
 const config = {
     server: {
@@ -10,7 +9,11 @@ const config = {
     preview: {
         port: 3000
     },
-    plugins: [sveltekit(), webSocketServer]
+    plugins: [
+        sveltekit(),
+        // webSocketServer,
+        webSocketServerVite,
+    ]
 };
 
 export default config;
