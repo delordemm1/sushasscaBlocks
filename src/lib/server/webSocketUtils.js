@@ -5,13 +5,6 @@ import { nanoid } from 'nanoid';
 // Types 
 globalThis.GlobalThisWSS = Symbol.for('sveltekit.wss');
 
-class ExtendedWebSocket extends WebSocket {
-  constructor() {
-    super();
-    this.socketId = '';
-  }
-}
-
 let wss;
 
 export const onHttpServerUpgrade = (req, sock, head) => {
